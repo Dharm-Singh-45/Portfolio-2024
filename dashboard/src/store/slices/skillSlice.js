@@ -93,7 +93,7 @@ const skillSlice = createSlice({
 export const getAllSkills = () => async(dispatch) =>{
     dispatch(skillSlice.actions.getAllSkillsRequest())
     try {
-        const {data} = await axios.get('http://localhost:4000/api/v1/skill/getall',{withCredentials:true})
+        const {data} = await axios.get('https://portfolio-backend-q41n.onrender.com/api/v1/skill/getall',{withCredentials:true})
         dispatch(skillSlice.actions.getAllSkillsSuccess(data.skills))
         dispatch(skillSlice.actions.clearAllErrors())
     } catch (error) {
@@ -106,7 +106,7 @@ export const addNewSkill = (data) =>async(dispatch) =>{
     dispatch(skillSlice.actions.addNewSkillRequest())
 
     try {
-        const response = await axios.post('http://localhost:4000/api/v1/skill/add',data,{withCredentials:true,headers:{"Content-Type":"multipart/form-data"}})
+        const response = await axios.post('https://portfolio-backend-q41n.onrender.com/api/v1/skill/add',data,{withCredentials:true,headers:{"Content-Type":"multipart/form-data"}})
         dispatch(skillSlice.actions.addNewSkillSuccess(response.data.message))
         dispatch(skillSlice.actions.clearAllErrors())
     } catch (error) {
@@ -119,7 +119,7 @@ export const updateSkill = (id, proficiency) => async (dispatch) => {
     dispatch(skillSlice.actions.updateSkillRequest());
     try {
       const response = await axios.put(
-        `http://localhost:4000/api/v1/skill/update/${id}`,
+        `https://portfolio-backend-q41n.onrender.com/api/v1/skill/update/${id}`,
         { proficiency },
         {
           withCredentials: true,
@@ -138,7 +138,7 @@ export const deleteSkill = (id) => async (dispatch) => {
     dispatch(skillSlice.actions.deleteSkillRequest());
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/skill/delete/${id}`,
+        `https://portfolio-backend-q41n.onrender.com/api/v1/skill/delete/${id}`,
         {
           withCredentials: true,
         }
