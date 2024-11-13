@@ -149,6 +149,7 @@ export const getUser = () => async (dispatch) => {
 
       { withCredentials: true }
     );
+   
     dispatch(userSlice.actions.loadUserSuccess(data.user));
     dispatch(userSlice.actions.clearAllError());
   } catch (error) {

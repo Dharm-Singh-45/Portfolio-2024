@@ -44,6 +44,8 @@ const HomePage = () => {
   const [active, setActive] = useState("Dashboard");
   const { isAuthenticated, error, user } = useSelector((state) => state.user);
 
+  console.log("homepage",user)
+
   const dispatch = useDispatch();
   const navigateTo = useNavigate();
 
