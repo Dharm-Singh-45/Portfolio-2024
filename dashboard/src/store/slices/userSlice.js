@@ -128,7 +128,7 @@ export const login = (email, password) => async (dispatch) => {
   dispatch(userSlice.actions.loginRequest());
   try {
     const { data } = await axios.post(
-      "https://portfolio-backend-q41n.onrender.com/api/v1/user/login",
+      "https://portfolio-backend-nlxk.onrender.com/api/v1/user/login",
       { email, password },
       { withCredentials: true, headers: { "Content-Type": "application/json" } }
     );
@@ -145,7 +145,7 @@ export const getUser = () => async (dispatch) => {
   dispatch(userSlice.actions.loadUserRequest());
   try {
     const { data } = await axios.get(
-      "https://portfolio-backend-q41n.onrender.com/api/v1/user/me",
+      "https://portfolio-backend-nlxk.onrender.com/api/v1/user/me",
 
       { withCredentials: true }
     );
@@ -162,7 +162,7 @@ export const getUser = () => async (dispatch) => {
 export const logout = () => async (dispatch) => {
   try {
     const { data } = await axios.get(
-      "https://portfolio-backend-q41n.onrender.com/api/v1/user/logout",
+      "https://portfolio-backend-nlxk.onrender.com/api/v1/user/logout",
 
       { withCredentials: true }
     );
@@ -181,7 +181,7 @@ export const updatePassword =
 
     try {
       const data = await axios.put(
-        "https://portfolio-backend-q41n.onrender.com/api/v1/user/update/password",
+        "https://portfolio-backend-nlxk.onrender.com/api/v1/user/update/password",
         { currentPassword, newPassword, confirmNewPassword },
         {
           withCredentials: true,
@@ -208,7 +208,7 @@ export const updateProfile =(formData) => async (dispatch) => {
 
     try {
       const data = await axios.put(
-        "https://portfolio-backend-q41n.onrender.com/api/v1/user/update/me",
+        "https://portfolio-backend-nlxk.onrender.com/api/v1/user/update/me",
         formData,
         {
           withCredentials: true,

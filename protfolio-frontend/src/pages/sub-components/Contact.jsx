@@ -16,7 +16,7 @@ const Contact = () => {
     setLoading(true)
     try {
       const res = await axios.post(
-        'https://portfolio-backend-q41n.onrender.com/api/v1/message/send',
+        'https://portfolio-backend-nlxk.onrender.com/api/v1/message/send',
         { senderName, subject, message },
         {
           withCredentials: true,

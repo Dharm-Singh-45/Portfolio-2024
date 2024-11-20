@@ -72,7 +72,7 @@ export const getAllTimeline = () => async (dispatch) => {
   dispatch(timelineSlice.actions.getAllTimelineRequest());
   try {
     const response = await axios.get(
-      "https://portfolio-backend-q41n.onrender.com/api/v1/timeline/getall",
+      "https://portfolio-backend-nlxk.onrender.com/api/v1/timeline/getall",
       { withCredentials: true }
     );
     dispatch(
@@ -90,7 +90,7 @@ export const addNewTimeline = (formData) => async (dispatch) => {
   dispatch(timelineSlice.actions.addNewTimelineRequest());
   try {
     const response = await axios.post(
-      "https://portfolio-backend-q41n.onrender.com/api/v1/timeline/add",
+      "https://portfolio-backend-nlxk.onrender.com/api/v1/timeline/add",
       formData,
       {
         withCredentials: true,
@@ -111,7 +111,7 @@ export const deleteTimeline = (id) => async (dispatch) => {
   dispatch(timelineSlice.actions.deleteTimelineRequest());
   try {
     const response = await axios.delete(
-      `https://portfolio-backend-q41n.onrender.com/api/v1/timeline/delete/${id}`,
+      `https://portfolio-backend-nlxk.onrender.com/api/v1/timeline/delete/${id}`,
       {
         withCredentials: true,
       }

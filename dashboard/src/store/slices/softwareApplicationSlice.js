@@ -80,7 +80,7 @@ const softwareApplicationSlice = createSlice({
 export const getAllSoftwareApplications = () => async(dispatch) =>{
     dispatch(softwareApplicationSlice.actions.getAllSoftwareApplicationsRequest())
     try {
-        const {data} = await axios.get('https://portfolio-backend-q41n.onrender.com/api/v1/softwareApplication/getall',{withCredentials:true})
+        const {data} = await axios.get('https://portfolio-backend-nlxk.onrender.com/api/v1/softwareApplication/getall',{withCredentials:true})
         dispatch(softwareApplicationSlice.actions.getAllSoftwareApplicationsSuccess(data.softwareApplication))
         dispatch(softwareApplicationSlice.actions.clearAllErrors())
     } catch (error) {
@@ -93,7 +93,7 @@ export const addNewSoftwareApplication= (data) =>async(dispatch) =>{
     dispatch(softwareApplicationSlice.actions.addNewSoftwareApplicationRequest())
 
     try {
-        const response = await axios.post('https://portfolio-backend-q41n.onrender.com/api/v1/softwareApplication/add',data,{withCredentials:true,headers:{"Content-Type":"multipart/form-data"}})
+        const response = await axios.post('https://portfolio-backend-nlxk.onrender.com/api/v1/softwareApplication/add',data,{withCredentials:true,headers:{"Content-Type":"multipart/form-data"}})
         dispatch(softwareApplicationSlice.actions.addNewSoftwareApplicationSuccess(response.data.message))
         dispatch(softwareApplicationSlice.actions.clearAllErrors())
     } catch (error) {
@@ -109,7 +109,7 @@ export const deleteSoftwareApplication= (id) => async (dispatch) => {
     dispatch(softwareApplicationSlice.actions.deleteSoftwareApplicationRequest());
     try {
       const response = await axios.delete(
-        `https://portfolio-backend-q41n.onrender.com/api/v1/softwareApplication/delete/${id}`,
+        `https://portfolio-backend-nlxk.onrender.com/api/v1/softwareApplication/delete/${id}`,
         {
           withCredentials: true,
         }
