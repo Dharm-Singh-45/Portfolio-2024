@@ -53,23 +53,18 @@ const About = () => {
             professionally. It also fuels my creativity and keeps me motivated
             to push boundaries in my work.
           </p>
-          <p>
-            I’m always eager to learn and expand my horizons, both in the tech
+          
+        </div>
+
+        
+      </div>
+      <p className="tracking-[1px] text-xl">
+        {" "}
+        I’m always eager to learn and expand my horizons, both in the tech
             world and in life. Whether it’s experimenting with new tools or
             discovering new destinations, I’m always ready for the next
             adventure. Thanks for taking the time to visit my portfolio – feel
             free to reach out if you’d like to connect or collaborate!
-          </p>
-        </div>
-
-        <div></div>
-      </div>
-      <p className="tracking-[1px] text-xl">
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum cum
-        officiis alias temporibus quae sapiente recusandae doloremque culpa?
-        Architecto, asperiores corporis? Corrupti veniam fuga nulla itaque nisi
-        minus autem adipisci!
       </p>
     </div>
   );
