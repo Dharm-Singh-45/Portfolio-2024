@@ -18,7 +18,7 @@ function App() {
     const wakeBackend = async () => {
       try {
         // Replace with your actual backend URL
-        await fetch('https://portfoli-backend-nlxk.onrender.com/api/v1/user/wake-up')
+        await fetch('https://portfolio-backend-nlxk.onrender.com/api/v1/user/wake-up')
 
          // Check if the response is successful
          if (!response.ok) {
