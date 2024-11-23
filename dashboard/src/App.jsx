@@ -26,6 +26,27 @@ import { getAllProjects } from './store/slices/projectSlice'
 const App = () => {
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    const wakeBackend = async () => {
+      try {
+        // Replace with your actual backend URL
+        await fetch('https://portfolio-backend-nlxk.onrender.com/api/v1/user/wake-up')
+
+         // Check if the response is successful
+         if (!response.ok) {
+          throw new Error('Failed to wake up the backend')
+        } 
+        
+        
+      } catch (error) {
+        toast.error(`Error waking up backend: ${error.message}`)
+      }
+    }
+
+    wakeBackend()
+  }, []) // Empty dependency array to run this only once on component mount
+
+
   useEffect(()=>{
     dispatch(getUser())
     dispatch(getAllMessages())
