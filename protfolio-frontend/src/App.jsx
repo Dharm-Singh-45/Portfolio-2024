@@ -18,10 +18,16 @@ function App() {
     const wakeBackend = async () => {
       try {
         // Replace with your actual backend URL
-        await fetch('https://portfolio-backend-nlxk.onrender.com/api/v1/user/wake-up')
-        console.log('Backend wake-up triggered')
+        await fetch('https://portfoli-backend-nlxk.onrender.com/api/v1/user/wake-up')
+
+         // Check if the response is successful
+         if (!response.ok) {
+          throw new Error('Failed to wake up the backend')
+        } 
+        
+        
       } catch (error) {
-        console.error('Error waking up backend:', error)
+        toast.error(`Error waking up backend: ${error.message}`)
       }
     }
 
