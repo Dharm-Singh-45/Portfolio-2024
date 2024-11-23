@@ -8,6 +8,8 @@ export const generateToken = (user, message, statusCode, res) => {
       expires:new Date(Date.now() + 1000 * 60 * 60 * 24),
     
       httpOnly: true,
+      secure: true,
+      sameSite:"None",
     })
     .json({
       success: true,
