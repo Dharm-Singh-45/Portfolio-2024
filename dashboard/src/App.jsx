@@ -20,31 +20,12 @@ import { getAllTimeline } from './store/slices/timelineSlice'
 import { getAllSkills } from './store/slices/skillSlice'
 import { getAllSoftwareApplications } from './store/slices/softwareApplicationSlice'
 import { getAllProjects } from './store/slices/projectSlice'
+import wakeUpBackend from './utilss/wakeBackend'
 
 
 
 const App = () => {
   const dispatch = useDispatch()
-
-  useEffect(() => {
-    const wakeBackend = async () => {
-      try {
-        // Replace with your actual backend URL
-        await fetch('https://portfolio-backend-nlxk.onrender.com/api/v1/user/wake-up')
-
-         // Check if the response is successful
-         if (!response.ok) {
-          throw new Error('Failed to wake up the backend')
-        } 
-        
-        
-      } catch (error) {
-        toast.error(`Error waking up backend: ${error.message}`)
-      }
-    }
-
-    wakeBackend()
-  }, []) // Empty dependency array to run this only once on component mount
 
 
   useEffect(()=>{
@@ -54,6 +35,7 @@ const App = () => {
     dispatch(getAllSkills())
     dispatch(getAllSoftwareApplications())
     dispatch(getAllProjects())
+    wakeUpBackend()
   },[])
   return (
     <Router>
